@@ -31,7 +31,12 @@ body,html {
   text-align: center;
   color: black;
   background: rgba(0,0,0,0);
-  /* text-shadow: 0 0 .5rem black; */
+  text-shadow: 0 0 .5rem black;
+}
+
+.key-accidental {
+  background-color: black;
+  color: white;
 }
 
 .playing {
