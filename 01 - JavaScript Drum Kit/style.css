@@ -10,37 +10,81 @@ body,html {
   font-family: sans-serif;
 }
 
-.keys {
-  display: flex;
-  flex: 1;
-  min-height: 75vh;
-  align-items: right;
-  justify-content: center;
+:root {
+  --keyboard: hsl(300, 100%, 16%);
+  --keyboard-shadow: hsla(19, 50%, 66%, 0.2);
+  --keyboard-border: hsl(20, 91%, 5%);
+  --black-10: hsla(0, 0%, 0%, 0.1);
+  --black-20: hsla(0, 0%, 0%, 0.2);
+  --black-30: hsla(0, 0%, 0%, 0.3);
+  --black-50: hsla(0, 0%, 0%, 0.5);
+  --black-60: hsla(0, 0%, 0%, 0.6);
+  --white-20: hsla(0, 0%, 100%, 0.2);
+  --white-50: hsla(0, 0%, 100%, 0.5);
+  --white-80: hsla(0, 0%, 100%, 0.8);
 }
 
-.key {
+.white, 
+.black {
+  position: relative;
+  float: left;
   display: flex;
-  flex-direction: column;
-  border: .4rem solid black;
-  border-radius: 0.75rem;
-  /* margin: 0.25rem; */
-  font-size: 1.5rem;
-  padding: 1rem .5rem;
-  transition: all .07s ease;
-  width: 10rem;
-  text-align: center;
-  color: black;
-  background: rgba(0,0,0,0);
-  text-shadow: 0 0 .5rem black;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0.5rem 0;
+  user-select: none;
+  cursor: pointer;
+}
+
+#keyboard {
+  height: 15.25rem;
+  width: 41rem;
+  margin: 0.5rem auto;
+  padding: 3rem 0 0 3rem;
+  position: relative;
+  border: 1px solid var(--keyboard-border);
+  border-radius: 1rem;
+  background-color: var(--keyboard);
+  box-shadow: 0 0 50px var(--black-50) inset, 0 1px var(--keyboard-shadow) inset,
+    0 5px 15px var(--black-50);
+}
+
+#keyboard li:first-child {
+  border-radius: 5px 0 5px 5px;
+}
+
+#keyboard li:last-child {
+  border-radius: 0 5px 5px 5px;
+}
+
+.white {
+  height: 12.5rem;
+  width: 3.5rem;
   z-index: 1;
+  border-left: 1px solid hsl(0, 0%, 73%);
+  border-bottom: 1px solid hsl(0, 0%, 73%);
+  border-radius: 0 0 5px 5px;
+  box-shadow: -1px 0 0 var(--white-80) inset, 0 0 5px hsl(0, 0%, 80%) inset,
+    0 0 3px var(--black-20);
+  background: linear-gradient(to bottom, hsl(0, 0%, 93%) 0%, white 100%);
+  color: var(--black-30);
 }
 
 .black {
-  margin:0 0 0 -5em;
-  /* z-index: 2; */
-  height: 45vh;
-  background-color: black;
-  color: white;
+  height: 8rem;
+  width: 2rem;
+  margin: 0 0 0 -1rem;
+  z-index: 2;
+  border: 1px solid black;
+  border-radius: 0 0 3px 3px;
+  box-shadow: -1px -1px 2px var(--white-20) inset,
+    0 -5px 2px 3px var(--black-60) inset, 0 2px 4px var(--black-50);
+  background: linear-gradient(45deg, hsl(0, 0%, 13%) 0%, hsl(0, 0%, 33%) 100%);
+  color: var(--white-50);
+}
+
+.offset {
+  margin: 0 0 0 -1rem;
 }
 
 .playing {
@@ -49,10 +93,7 @@ body,html {
   box-shadow: 0 0 1rem #ffc600;
 }
 
-kbd {
-  font-size: 4rem;
-  margin-top: auto;
-}
+
 
 .button {
   display: flex;
