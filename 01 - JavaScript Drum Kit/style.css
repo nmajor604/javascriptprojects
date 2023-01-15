@@ -17,21 +17,6 @@ video#bgvid {
   background-size: cover; 
 }
 
-/* header {
-position: relative;
-margin: 30px 0;
-}
-
-header:after {
-content: '';
-width: 460px;
-height: 15px;
-background: url(images/intro-div.svg) no-repeat center;
-display: inline-block;
-text-align: center;
-background-size: 70%;
-} */
-
 h1 {
 color: #fff;
 font-size: 50px;
@@ -139,6 +124,6 @@ transition: opacity .3s ease-out;
 font-size: 20px;
 }
 
-.keys:hover .hints {
+.key:hover .hints {
 opacity: 1;
 }
